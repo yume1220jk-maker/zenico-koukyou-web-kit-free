@@ -138,14 +138,14 @@ ZENICOでは、公共Web案件を
 の流れで整理する無料サンプルを公開しています。
 
 - 無料リポジトリ: このGitHubリポジトリ内の `sample/`
-- 無料Webサンプル: https://zenico-koukyou-web-kit.vercel.app/sample/
+- 無料Webサンプル: https://zenico-koukyou-web-kit.vercel.app/sample/?utm_source=github&utm_medium=organic&utm_campaign=renewal_proposal_guide
 
 ## 有料スターターキット
 
 探索キーワード集、案件一次判定CSV、原文確認チェックリスト、週次レビューテンプレートをまとめた買い切り版もあります。
 
 - 980円・買い切り
-- 商品ページ: https://zenico-koukyou-web-kit.vercel.app/
+- 商品ページ: https://zenico-koukyou-web-kit.vercel.app/?utm_source=github&utm_medium=organic&utm_campaign=renewal_proposal_guide
 
 ## 注意
 
