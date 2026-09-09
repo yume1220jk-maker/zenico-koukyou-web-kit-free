@@ -36,10 +36,10 @@ CSV内の案件名・発注機関はサンプル用の架空データです。
 - 週次レビューテンプレート
 
 商品ページ:
-https://zenico-koukyou-web-kit.vercel.app/
+https://zenico-koukyou-web-kit.vercel.app/?utm_source=github&utm_medium=organic&utm_campaign=free_repo_readme
 
 無料Webサンプル:
-https://zenico-koukyou-web-kit.vercel.app/sample/
+https://zenico-koukyou-web-kit.vercel.app/sample/?utm_source=github&utm_medium=organic&utm_campaign=free_repo_readme
 
 ## 無料ガイド
 
