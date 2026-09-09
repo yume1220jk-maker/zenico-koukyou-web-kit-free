@@ -45,6 +45,8 @@ https://zenico-koukyou-web-kit.vercel.app/sample/
 
 官公需案件の探索手順、検索キーワード、入札公告の読み方を無料公開しています。
 
+- ホームページリニューアルのプロポーザル案件を探す方法
+  - `guides/homepage-renewal-proposal.md`
 - 官公需情報ポータルの使い方 — Web制作案件を探す検索手順
   - https://zenico-koukyou-web-kit.vercel.app/guide/kankouju-portal-tsukaikata/
 - Web制作の公共案件 — 「一般競争」と「プロポーザル」の違い
