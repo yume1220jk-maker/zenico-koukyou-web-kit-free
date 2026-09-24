@@ -1,4 +1,4 @@
-name: Publish verified public Web procurement sample
+name: Refresh attributed, unverified procurement API candidates
 on:
   schedule:
     - cron: "37 0 * * 1-5" # 09:37 JST, weekdays
@@ -28,12 +28,16 @@ jobs:
         run: python automation/test_zenico_recent_notices.py
       - name: Fetch small official API sample, sequentially
         run: python automation/zenico_recent_notices.py
-      - name: Save verifiable sample if changed
+      - name: Publish candidate list against latest main without overwriting source edits
         run: |
-          if ! git diff --quiet -- sample/recent-public-web-notices.md || test -n "$(git ls-files --others --exclude-standard sample/recent-public-web-notices.md)"; then
+          cp sample/recent-public-web-notices.md "$RUNNER_TEMP/zenico-sampled-notices.md"
+          git fetch origin main
+          git reset --hard origin/main
+          cp "$RUNNER_TEMP/zenico-sampled-notices.md" sample/recent-public-web-notices.md
+          git add sample/recent-public-web-notices.md
+          if ! git diff --cached --quiet; then
             git config user.email 'github-actions[bot]@users.noreply.github.com'
             git config user.name 'github-actions[bot]'
-            git add sample/recent-public-web-notices.md
-            git commit -m 'data: refresh sourced public Web procurement sample'
-            git push
+            git commit -m 'data: refresh attributed API candidates (not verified open)'
+            git push origin HEAD:main
           fi
