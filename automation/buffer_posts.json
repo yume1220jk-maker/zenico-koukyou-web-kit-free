@@ -1,0 +1,34 @@
+[
+  {
+    "id": "webguide-01",
+    "text": "自治体サイトのリニューアル案件、探すときは『ホームページ リニューアル』だけでは漏れることがあります。公募型プロポーザルの表現も確認する手順を無料公開。ZENICOのガイドです。\nhttps://zenico-koukyou-web-kit.vercel.app/guide/jichitai-renewal/?utm_source=x&utm_medium=social&utm_campaign=guide"
+  },
+  {
+    "id": "webguide-02",
+    "text": "公共Web制作の案件探索では、まず原文の公告と募集要領で期限・参加条件を確認。ZENICOの無料ガイドで、入札公告を読む一次チェックリストを公開しています。\nhttps://zenico-koukyou-web-kit.vercel.app/guide/nyusatsu-checklist/?utm_source=x&utm_medium=social&utm_campaign=guide"
+  },
+  {
+    "id": "webguide-03",
+    "text": "官公需のWeb制作案件を整理するためのCSVサンプルを公開中。探す→一次判定→原文確認の流れを小さく試せます。架空のサンプルデータで、実在案件の紹介ではありません。\nhttps://zenico-koukyou-web-kit.vercel.app/sample/?utm_source=x&utm_medium=social&utm_campaign=sample"
+  },
+  {
+    "id": "webguide-04",
+    "text": "Web制作の公共案件で『一般競争』と『プロポーザル』はどう違うのか。探索前に確認できる無料ガイドをZENICOで公開しています。\nhttps://zenico-koukyou-web-kit.vercel.app/guide/proposal-vs-ippan/?utm_source=x&utm_medium=social&utm_campaign=guide"
+  },
+  {
+    "id": "webguide-05",
+    "text": "自治体CMSやWebサイト保守案件は、募集時の表現が統一されていません。検索キーワードの組み方を整理したZENICOの無料ガイドです。\nhttps://zenico-koukyou-web-kit.vercel.app/guide/cms-unyou-hoshu/?utm_source=x&utm_medium=social&utm_campaign=guide"
+  },
+  {
+    "id": "webguide-06",
+    "text": "官公需Web案件探索の作業を自社で始めたい方向けに、キーワード集・一次判定CSV・確認チェックリストをまとめた買い切り980円の資料をZENICOで公開しています。無料サンプルから確認可能。\nhttps://zenico-koukyou-web-kit.vercel.app/?utm_source=x&utm_medium=social&utm_campaign=kit"
+  },
+  {
+    "id": "webguide-07",
+    "text": "公共案件を見つけた後、確認が必要な期限を見落とさないための無料ガイドです。日付は必ず発注機関の最新原文で確認してください。\nhttps://zenico-koukyou-web-kit.vercel.app/guide/deadline-shitsumon/?utm_source=x&utm_medium=social&utm_campaign=guide"
+  },
+  {
+    "id": "webguide-08",
+    "text": "Web制作会社向けに、官公需情報ポータルから案件を探すときの手順を無料公開しています。ZENICOの資料は最終的な参加資格判定や落札を保証しません。\nhttps://zenico-koukyou-web-kit.vercel.app/guide/kankouju-portal-tsukaikata/?utm_source=x&utm_medium=social&utm_campaign=guide"
+  }
+]
