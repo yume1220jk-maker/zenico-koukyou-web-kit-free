@@ -8,7 +8,7 @@ Web制作会社向けに、**自治体ホームページのリニューアル／
 このリポジトリは、有料版「官公需Web案件探索スターターキット」の一部を
 購入前に確認できる縮小版です。
 
-> **購入を検討している方へ**：無料版の `sample/` を先に確認できます。探索キーワード集・案件一次判定CSV・原文確認チェックリスト・週次レビューの4点が必要な場合は、**[980円で買い切り購入（Stripe決済）](https://buy.stripe.com/aFa14o3Lv3PX4CUcbm2kw00)**できます。決済後は有料版の納品ページに移動します。購入前に詳細を確認したい方は[商品説明ページ](https://zenico-koukyou-web-kit.vercel.app/?utm_source=github&utm_medium=organic&utm_campaign=free_repo_readme_direct_cta)をご覧ください。
+> **購入を検討している方へ**：無料版の `sample/` を先に確認できます。**ゼロから自社用の探索表を作る代わりに、そのまま編集して使える「探索キーワード集・案件一次判定CSV・原文確認チェックリスト・週次レビュー」の4点をまとめて入手したい場合**は、**[980円で買い切り購入（Stripe決済）](https://buy.stripe.com/aFa14o3Lv3PX4CUcbm2kw00)**できます。決済後は有料版の納品ページに移動します。購入前に詳細を確認したい方は[商品説明ページ](https://zenico-koukyou-web-kit.vercel.app/?utm_source=github&utm_medium=organic&utm_campaign=free_repo_readme_direct_cta)をご覧ください。
 
 
 ## 発注機関の原文を直接確認した無料調査（2026年9月24日版）
@@ -55,6 +55,8 @@ CSV内の案件名・発注機関はサンプル用の架空データです。
 - 案件一次判定CSV
 - 原文確認チェックリスト
 - 週次レビューテンプレート
+
+**購入後に得られるもの：** 上の4点を自社向けに編集し、候補発見→一次判定→原文確認→週次見直しを同じ型で回すための作業テンプレート一式です。案件の発見・参加・落札そのものを保証する商品ではありません。
 
 商品内容・購入条件の確認:
 https://zenico-koukyou-web-kit.vercel.app/?utm_source=github&utm_medium=organic&utm_campaign=free_repo_readme
