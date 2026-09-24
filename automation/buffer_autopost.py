@@ -1,7 +1,7 @@
 """At-most-once Buffer scheduler for ZENICO's public procurement guide channel.
 
 This intentionally will NOT publish until the user's X account is connected to
-Buffer and GitHub secrets ZENICO_BUFFER_API_KEY / ZENICO_BUFFER_CHANNEL_ID are set.
+Buffer and the GitHub secret ZENICO_BUFFER_API_KEY is set.
 Each run claims at most one hand-reviewed original post, commits its claim,
 then schedules it. Ambiguous API failures fail closed (no automatic retry).
 """
@@ -29,22 +29,25 @@ def graphql(key, query):
     return result["data"]
 
 
-def validate_channel(key, channel_id):
+def resolve_channel(key, configured_channel_id):
+    """Choose the verified Buffer X channel; autodetect only when unambiguous."""
     organizations = graphql(key, "query { account { organizations { id } } }")["account"]["organizations"]
+    candidates = []
     for org in organizations:
         org_id = json.dumps(org["id"])
-        q = "query { channels(input: { organizationId: " + org_id + " }) { id name service } }"
-        result = graphql(key, q)
-        for channel in result.get("channels", []):
-            if channel.get("id") == channel_id and channel.get("service", "").lower() in ("twitter", "x"):
-                expected = os.getenv("ZENICO_BUFFER_EXPECTED_ACCOUNT", "").strip().lstrip("@").lower()
-                actual = channel.get("name", "").strip().lstrip("@").lower()
-                if expected and expected != actual:
-                    raise RuntimeError("Connected X channel name differs from expected account")
-                if not expected:
-                    raise RuntimeError("Set ZENICO_BUFFER_EXPECTED_ACCOUNT to the dedicated X channel name")
-                return
-    raise RuntimeError("Configured Buffer channel is not a connected X account")
+        q = "query { channels(input: { organizationId: " + org_id + " }) { id name displayName service } }"
+        candidates.extend(x for x in graphql(key, q).get("channels", [])
+                          if x.get("service", "").lower() in ("twitter", "x"))
+
+    selected = [x for x in candidates if x["id"] == configured_channel_id] if configured_channel_id else candidates
+    if len(selected) != 1:
+        raise RuntimeError("Exactly one matching X channel required; set ZENICO_BUFFER_CHANNEL_ID if multiple")
+    expected = os.getenv("ZENICO_BUFFER_EXPECTED_ACCOUNT", "").strip().lstrip("@").lower()
+    if expected:
+        names = {str(selected[0].get(k) or "").strip().lstrip("@").lower() for k in ("name", "displayName")}
+        if expected not in names:
+            raise RuntimeError("Connected Buffer X channel does not match configured expected account")
+    return selected[0]["id"]
 
 
 def load_state():
@@ -57,11 +60,10 @@ def save_state(s):
 
 def main(stage):
     key = os.getenv("ZENICO_BUFFER_API_KEY")
-    channel_id = os.getenv("ZENICO_BUFFER_CHANNEL_ID")
-    if not key or not channel_id:
-        print("SETUP_REQUIRED: no verified Buffer/X connection; no publication attempted")
+    if not key:
+        print("SETUP_REQUIRED: add Buffer API key to GitHub Secrets; no publication attempted")
         return 0
-    validate_channel(key, channel_id)
+    channel_id = resolve_channel(key, os.getenv("ZENICO_BUFFER_CHANNEL_ID"))
     queue = json.loads(QUEUE_FILE.read_text(encoding="utf-8"))
     state = load_state()
     existing_claims = [k for k, v in state.items() if v.get("status") == "claimed"]
