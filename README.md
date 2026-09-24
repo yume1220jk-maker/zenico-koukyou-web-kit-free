@@ -11,6 +11,14 @@ Web制作会社向けに、**自治体ホームページのリニューアル／
 > **購入を検討している方へ**：無料版の `sample/` を先に確認できます。探索キーワード集・案件一次判定CSV・原文確認チェックリスト・週次レビューの4点が必要な場合は、**[980円で買い切り購入（Stripe決済）](https://buy.stripe.com/aFa14o3Lv3PX4CUcbm2kw00)**できます。決済後は有料版の納品ページに移動します。購入前に詳細を確認したい方は[商品説明ページ](https://zenico-koukyou-web-kit.vercel.app/?utm_source=github&utm_medium=organic&utm_campaign=free_repo_readme_direct_cta)をご覧ください。
 
 
+## 発注機関の原文を直接確認した無料調査（2026年9月24日版）
+
+**[提案期限だけでは判断できない：Web調達の発注機関別原文3例](guides/source-verified-web-procurement-20260924.md)**
+
+国際交流基金のWebサイト設計・運用保守・記事制作案件（**ページ記載の提出期限：2026年10月2日13時**、説明会は終了済み）、横浜市の**参加申請締切済み**案件、大分市の**API記載日と原公告日が食い違った**案件を並べ、元資料を確認する方法を公開しています。**いずれも今から新規参加できると保証するものではありません**。
+
+継続して官公需Web案件の**自動抽出通知**が必要な事業者には[公共Webウォッチ月額980円の既存検証プラン](https://iuycadhbkfmikfrewqjr.supabase.co/functions/v1/zenico-pww-offer?ref=pww25_github_sourceproof_0924)もあります。ただし、この無料の手動照合記事と異なり、同プランは各件の原公告・参加資格を毎回人手で照合するサービスではありません。
+
 ## 出典付きの実在案件サンプル（自動更新）
 
 **[官公需情報ポータルAPIから取得したWeb調達の未検証候補を見る](sample/recent-public-web-notices.md)**
