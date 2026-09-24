@@ -12,7 +12,10 @@ assert len(results) == 1
 assert "https://example.jp/tender/123" in recent.render(results, now)
 expired = good.replace(b"2026-09-30", b"2026-09-20")
 assert recent.parse(expired, now) == []
+unknown_deadline = good.replace(b"<TenderSubmissionDeadline>2026-09-30</TenderSubmissionDeadline>", b"")
+assert recent.parse(unknown_deadline, now) == []
+assert "0件" in recent.render([], now)
 bad_url = good.replace(b"https://example.jp/tender/123", b"javascript:alert(1)")
 assert recent.parse(bad_url, now) == []
 assert recent.parse(b"<Results><SearchResults/></Results>", now) == []
-print("All four parser tests passed.")
+print("All candidate-safety parser tests passed.")
