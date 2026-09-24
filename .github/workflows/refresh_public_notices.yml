@@ -1,0 +1,39 @@
+name: Publish verified public Web procurement sample
+on:
+  schedule:
+    - cron: "37 0 * * 1-5" # 09:37 JST, weekdays
+  workflow_dispatch: {}
+  push:
+    paths:
+      - "automation/zenico_recent_notices.py"
+      - "automation/test_zenico_recent_notices.py"
+      - ".github/workflows/refresh_public_notices.yml"
+permissions:
+  contents: write
+concurrency:
+  group: zenico-public-notices
+  cancel-in-progress: false
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    timeout-minutes: 6
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Verify XML filtering and non-fabrication behavior
+        run: python automation/test_zenico_recent_notices.py
+      - name: Fetch small official API sample, sequentially
+        run: python automation/zenico_recent_notices.py
+      - name: Save verifiable sample if changed
+        run: |
+          if ! git diff --quiet -- sample/recent-public-web-notices.md || test -n "$(git ls-files --others --exclude-standard sample/recent-public-web-notices.md)"; then
+            git config user.email 'github-actions[bot]@users.noreply.github.com'
+            git config user.name 'github-actions[bot]'
+            git add sample/recent-public-web-notices.md
+            git commit -m 'data: refresh sourced public Web procurement sample'
+            git push
+          fi
