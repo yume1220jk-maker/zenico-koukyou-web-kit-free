@@ -8,6 +8,9 @@ Web制作会社向けに、**自治体ホームページのリニューアル／
 このリポジトリは、有料版「官公需Web案件探索スターターキット」の一部を
 購入前に確認できる縮小版です。
 
+> **購入を検討している方へ**：無料版の `sample/` を先に確認できます。探索キーワード集・案件一次判定CSV・原文確認チェックリスト・週次レビューの4点が必要な場合は、**[980円で買い切り購入（Stripe決済）](https://buy.stripe.com/aFa14o3Lv3PX4CUcbm2kw00)**できます。決済後は有料版の納品ページに移動します。購入前に詳細を確認したい方は[商品説明ページ](https://zenico-koukyou-web-kit.vercel.app/?utm_source=github&utm_medium=organic&utm_campaign=free_repo_readme_direct_cta)をご覧ください。
+
+
 ## 無料サンプルに含まれるもの
 
 - `sample/triage-sample.csv`
