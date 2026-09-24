@@ -67,6 +67,15 @@ https://zenico-koukyou-web-kit.vercel.app/sample/?utm_source=github&utm_medium=o
 - Web制作案件の入札公告を読む一次チェックリスト
   - https://zenico-koukyou-web-kit.vercel.app/guide/nyusatsu-checklist/
 
+## 関連する無料チェックリスト：Webサイト公開前の検証証跡
+
+Web制作会社向けに、**公開前の検証項目・証拠・UNKNOWN／残課題の整理方法**をまとめた無料ガイドも公開しています。
+
+- [Webサイト公開前チェックリスト（無料）](guides/koukai-mae-web-evidence-checklist.md)
+- 検証証跡を第三者形式の報告書にまとめたい企業向け：[ZENICO 公開前Evidence Audit（9,800円／件、少数B2B試験受付）](https://zenico-evidence-audit.vercel.app/?utm_source=github&utm_medium=owned&utm_campaign=free_repo_release_checklist_20260924)
+
+Evidence Auditは本リポジトリの官公需案件探索スターターキットとは別サービスです。公開・認証不要の権限ある対象のみを扱い、侵入テスト・法令適合性保証は行いません。
+
 ## 注意
 
 本リポジトリおよび有料版は、案件探索・情報整理を補助するための資料です。
