@@ -11,6 +11,12 @@ Web制作会社向けに、**自治体ホームページのリニューアル／
 > **購入を検討している方へ**：無料版の `sample/` を先に確認できます。探索キーワード集・案件一次判定CSV・原文確認チェックリスト・週次レビューの4点が必要な場合は、**[980円で買い切り購入（Stripe決済）](https://buy.stripe.com/aFa14o3Lv3PX4CUcbm2kw00)**できます。決済後は有料版の納品ページに移動します。購入前に詳細を確認したい方は[商品説明ページ](https://zenico-koukyou-web-kit.vercel.app/?utm_source=github&utm_medium=organic&utm_campaign=free_repo_readme_direct_cta)をご覧ください。
 
 
+## 出典付きの実在案件サンプル（自動更新）
+
+**[官公需情報ポータルAPIで取得した最近の公共Web関連公告を見る](sample/recent-public-web-notices.md)**
+
+平日朝に公開APIから少数の実在案件を取得し、発注機関の原文にリンクします。応募可能性・期限・参加資格は必ず原文で確認してください。更新に失敗した場合は古い一覧が残ることがあるため、ページの取得基準日を確認してください。下のCSVサンプルは対照的に架空データです。
+
 ## 無料サンプルに含まれるもの
 
 - `sample/triage-sample.csv`
