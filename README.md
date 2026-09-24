@@ -37,8 +37,12 @@ CSV内の案件名・発注機関はサンプル用の架空データです。
 - 原文確認チェックリスト
 - 週次レビューテンプレート
 
-商品ページ:
+商品内容・購入条件の確認:
 https://zenico-koukyou-web-kit.vercel.app/?utm_source=github&utm_medium=organic&utm_campaign=free_repo_readme
+
+[有料版を980円で直接購入（Stripe・買い切り）](https://buy.stripe.com/aFa14o3Lv3PX4CUcbm2kw00)
+
+直接購入する前に、上の商品ページで収録内容と注意事項をご確認ください。決済後は既存の自動納品導線へ進みます。
 
 無料Webサンプル:
 https://zenico-koukyou-web-kit.vercel.app/sample/?utm_source=github&utm_medium=organic&utm_campaign=free_repo_readme
