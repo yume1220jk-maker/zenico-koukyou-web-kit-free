@@ -1,21 +1,11 @@
-# ZENICO Buffer → X 自動投稿
+# ZENICO Buffer投稿案 — 保留（AI事務員ゼロ号には使用しない）
 
-**現状:** GitHub Actions は導入済み。ただし、本人による Buffer 登録・X 認可・Buffer API キー登録が済むまで自動投稿しません。
+**運用停止：** AI事務員ゼロ号（@ai_jimu_zero）は現時点でZENICOの販売・公共Web案件探索キットの宣伝チャンネルではありません。オーナーの指示により、商業用8本の自動投稿はすべて**却下・停止**しました。GitHub Actionsの自動投稿ワークフローは削除済みであり、平日10:17の投稿予定はありません。
 
-## 最小セットアップ（有料ブラウザ不要）
+- `automation/buffer_posts.json` は、ZENICO専用の別チャンネルを将来正式に作る場合の参考案としてのみ保存。**AI事務員ゼロ号では送信禁止**。
+- Bufferの既存接続情報・APIキーは触らず、ここから投稿する自動処理だけ停止しました。
+- AI事務員ゼロ号の発信は本人が別途決める非商業的な編集方針を優先します。ZENICO商品へのCTA、有料キットへの誘導、アフィリエイト、商用案件獲得文は、今後の明示的な許可なしに混ぜません。
+- ZENICOの販売施策は、ZENICO自身が所有するサイト・GitHub・専用チャンネルに限定します。商品販売とAI事務員の創作発信は別の目的です。
+- `.github/workflows/verify_buffer_setup.yml` は読み取り専用の接続確認用です。実投稿は行いません。
 
-1. Buffer Free で登録する: https://login.buffer.com/signup?plan=free&product=buffer
-2. Buffer 内から運用対象の **X** アカウントを接続し、本人による認証と権限承認を完了する。
-3. Buffer API settings で **Personal API Key** を作成する: https://publish.buffer.com/settings/api
-4. GitHub リポジトリの **Settings → Secrets and variables → Actions → New repository secret** に、名前 `ZENICO_BUFFER_API_KEY` でキーを保存する。チャットや公開ファイルへキーを貼らない。
-
-これで Buffer に接続した X チャンネルが **1つだけ** なら ID を自動認識する。複数の X チャンネルがある場合は、意図しない投稿を防止するため自動投稿を停止し、`ZENICO_BUFFER_CHANNEL_ID` を追加指定する。任意で `ZENICO_BUFFER_EXPECTED_ACCOUNT` を Repository Variables に設定すると名前の照合もできる。
-
-## 動作
-
-- 平日 10:17 JST に GitHub Actions が起動し、未送信の投稿を1件だけ Buffer のキューに入れる。
-- 送信前にローカルの状態ファイルへ claim を記録。API 応答が不明な場合は再送をせず `manual_check_required` で停止する。
-- 投稿文案は `automation/buffer_posts.json` にある既存の公共Web案件探索ガイド向け8件。
-- 最初の8件が終了した時点で **自動的には新しい文章を生成しない**。その追加開発と運用は別途必要。画像の自動生成・投稿、フォロワー対応、アフィリエイト販売の自動化も本リポジトリでは未実装。
-- 投稿はプラットフォーム規約を遵守し、重複投稿を避けること。
-- GitHub Actions workflow: `.github/workflows/buffer_autopost.yml`
+更新理由：商用導線がAI事務員ゼロ号の役割と混同されていたため。
