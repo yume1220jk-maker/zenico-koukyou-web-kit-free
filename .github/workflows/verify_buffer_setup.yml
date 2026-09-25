@@ -1,0 +1,40 @@
+name: Verify Buffer setup (read-only)
+on:
+  push:
+    paths:
+      - '.github/workflows/verify_buffer_setup.yml'
+  workflow_dispatch: {}
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 3
+    env:
+      ZENICO_BUFFER_API_KEY: ${{ secrets.ZENICO_BUFFER_API_KEY }}
+      ZENICO_BUFFER_CHANNEL_ID: ${{ secrets.ZENICO_BUFFER_CHANNEL_ID }}
+      ZENICO_BUFFER_EXPECTED_ACCOUNT: ${{ vars.ZENICO_BUFFER_EXPECTED_ACCOUNT }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Verify secret and connected X channel without publishing
+        run: |
+          python - <<'PY'
+          import os, sys
+          sys.path.insert(0, 'automation')
+          from buffer_autopost import resolve_channel
+          key = os.environ.get('ZENICO_BUFFER_API_KEY', '').strip()
+          if not key:
+              print('SETUP_REQUIRED: GitHub secret ZENICO_BUFFER_API_KEY is not configured.')
+              sys.exit(2)
+          print('API_KEY_PRESENT: GitHub secret is available to the workflow (value withheld).')
+          try:
+              channel = resolve_channel(key, os.environ.get('ZENICO_BUFFER_CHANNEL_ID', '').strip())
+          except Exception as err:
+              print(f'CHANNEL_OR_API_CHECK_FAILED: {type(err).__name__}. Check key permissions and X channel connection.')
+              sys.exit(3)
+          print('BUFFER_X_CHANNEL_VERIFIED: a matching Buffer X channel is connected.')
+          print('NO_PUBLICATION: read-only test completed; no post was created.')
+          PY
