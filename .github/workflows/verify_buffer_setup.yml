@@ -13,7 +13,7 @@ jobs:
     env:
       ZENICO_BUFFER_API_KEY: ${{ secrets.ZENICO_BUFFER_API_KEY }}
       ZENICO_BUFFER_CHANNEL_ID: ${{ secrets.ZENICO_BUFFER_CHANNEL_ID }}
-      ZENICO_BUFFER_EXPECTED_ACCOUNT: ${{ vars.ZENICO_BUFFER_EXPECTED_ACCOUNT }}
+      ZENICO_BUFFER_EXPECTED_ACCOUNT: ai_jimu_zero
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
