@@ -72,6 +72,7 @@ https://zenico-koukyou-web-kit.vercel.app/sample/?utm_source=github&utm_medium=o
 
 官公需案件の探索手順、検索キーワード、入札公告の読み方を無料公開しています。
 
+- [官公需情報ポータルを5分で試す：Web制作案件の探索フィットチェック](guides/official-portal-5min-fit-check-20261001.md)
 - [ホームページリニューアルのプロポーザル案件を探す方法](guides/homepage-renewal-proposal.md)
 - 官公需情報ポータルの使い方 — Web制作案件を探す検索手順
   - https://zenico-koukyou-web-kit.vercel.app/guide/kankouju-portal-tsukaikata/
